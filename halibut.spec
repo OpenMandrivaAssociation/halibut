@@ -1,6 +1,8 @@
 %define svndate 20100504
 %define svnver 8934
 
+%define _disable_lto 1
+
 Name:		halibut
 Summary:	TeX-like software manual tool
 Version:	1.0
