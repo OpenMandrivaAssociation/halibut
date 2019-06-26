@@ -5,7 +5,7 @@
 
 Name:		halibut
 Summary:	TeX-like software manual tool
-Version:	1.0
+Version:	1.2
 Release:	%mkrel 2.%{svndate}svn%{svnver}
 License:	MIT
 Group:		Text tools
