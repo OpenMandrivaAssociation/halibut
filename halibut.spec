@@ -41,7 +41,7 @@ This package provides vim syntax support for Halibut input files (*.but).
 
 
 %prep
-%setup -q -n
+%setup -q
 
 
 %build
