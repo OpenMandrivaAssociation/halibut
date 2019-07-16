@@ -6,7 +6,7 @@
 Name:		halibut
 Summary:	TeX-like software manual tool
 Version:	1.2
-Release:	%mkrel 2.%{svndate}svn%{svnver}
+Release:	3
 License:	MIT
 Group:		Text tools
 URL:		http://www.chiark.greenend.org.uk/~sgtatham/halibut.html
@@ -17,7 +17,9 @@ URL:		http://www.chiark.greenend.org.uk/~sgtatham/halibut.html
 #  svn export -r %{svnver} svn://svn.tartarus.org/sgt/charset
 #  popd
 #  tar -cjvf halibut-%{svndate}.tar.bz2 halibut-%{svndate}
-Source0:	%{name}-%{svndate}.tar.bz2
+#Source0:	%{name}-%{svndate}.tar.bz2
+# No need now to use git. Tarball available
+Source0:    https://www.chiark.greenend.org.uk/~sgtatham/halibut/%{name}-%{version}/%{name}-%{version}.tar.gz
 
 %description
 Halibut is yet another text formatting system, intended primarily for
@@ -39,7 +41,7 @@ This package provides vim syntax support for Halibut input files (*.but).
 
 
 %prep
-%setup -q -n %{name}-%{svndate}
+%setup -q
 
 
 %build
