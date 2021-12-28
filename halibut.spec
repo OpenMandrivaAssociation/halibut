@@ -5,8 +5,8 @@
 
 Name:		halibut
 Summary:	TeX-like software manual tool
-Version:	1.2
-Release:	3
+Version:	1.3
+Release:	1
 License:	MIT
 Group:		Text tools
 URL:		http://www.chiark.greenend.org.uk/~sgtatham/halibut.html
@@ -20,7 +20,7 @@ URL:		http://www.chiark.greenend.org.uk/~sgtatham/halibut.html
 #Source0:	%{name}-%{svndate}.tar.bz2
 # No need now to use git. Tarball available
 Source0:    https://www.chiark.greenend.org.uk/~sgtatham/halibut/%{name}-%{version}/%{name}-%{version}.tar.gz
-
+Source1:    halibut.vim
 %description
 Halibut is yet another text formatting system, intended primarily for
 writing software documentation. It accepts a single source format and
@@ -39,30 +39,28 @@ BuildArch:	noarch
 %description -n vim-halibut
 This package provides vim syntax support for Halibut input files (*.but).
 
-
 %prep
 %setup -q
 
-
 %build
-sed -i 's/CFLAGS += -g/CFLAGS += /g' Makefile
-export CFLAGS="%{optflags}"
-make VERSION="%{version}"
-%make -C doc
+%cmake
 
+%make_build 
 
 %install
-%makeinstall INSTALL="install -Dp"
-install -d  html
-install -pm 0644 doc/*.html html
-install -d %{buildroot}%{_datadir}/vim/syntax
-install -pm 0644 misc/halibut.vim %{buildroot}%{_datadir}/vim/syntax
-
+cd build
+%make_install 
+cd doc 
+%make_install
+mkdir -p %{buildroot}/%{_datadir}/vim/vimfiles/syntax
+cp %{SOURCE1} %{buildroot}/%{_datadir}/vim/vimfiles/syntax/
 
 %files
-%doc LICENCE html
+%doc LICENCE 
+%{_infodir}/%{name}*
+%{_docdir}/halibut/*.html
 %{_bindir}/halibut
 %{_mandir}/man1/*.1*
 
 %files -n vim-halibut
-%{_datadir}/vim/syntax/*.vim
+%{_datadir}/vim/vimfiles/syntax/*.vim
