@@ -6,7 +6,7 @@
 Name:		halibut
 Summary:	TeX-like software manual tool
 Version:	1.3
-Release:	1
+Release:	2
 License:	MIT
 Group:		Text tools
 URL:		http://www.chiark.greenend.org.uk/~sgtatham/halibut.html
