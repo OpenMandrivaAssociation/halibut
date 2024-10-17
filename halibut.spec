@@ -9,7 +9,7 @@ Version:	1.3
 Release:	2
 License:	MIT
 Group:		Text tools
-URL:		http://www.chiark.greenend.org.uk/~sgtatham/halibut.html
+URL:		https://www.chiark.greenend.org.uk/~sgtatham/halibut.html
 # The source for this package was pulled from upstream's vcs.  Use the
 # following commands to generate the tarball:
 #  svn export -r %{svnver} svn://svn.tartarus.org/sgt/halibut halibut-%{svndate}
