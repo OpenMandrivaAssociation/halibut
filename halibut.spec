@@ -21,6 +21,7 @@ URL:		https://www.chiark.greenend.org.uk/~sgtatham/halibut.html
 # No need now to use git. Tarball available
 Source0:    https://www.chiark.greenend.org.uk/~sgtatham/halibut/%{name}-%{version}/%{name}-%{version}.tar.gz
 Source1:    halibut.vim
+BuildRequires:	make
 %description
 Halibut is yet another text formatting system, intended primarily for
 writing software documentation. It accepts a single source format and
